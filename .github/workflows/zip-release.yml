@@ -1,0 +1,44 @@
+name: Zip release CI
+
+# Controls when the workflow will run
+on:
+  push:
+    tags:
+      - "v*"
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  create-zip:
+    name: Create zip job
+
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      - name: Zip Release
+        # uses: TheDoctor0/zip-release@09336613be18a8208dfa66bd57efafd9e2685657
+        uses: TheDoctor0/zip-release@0.6.2
+        with:
+          # Tool to use for archiving
+          type: 'zip'
+          # Filename for archive
+          filename: 'MagiskShowCameraSoundsModule.zip'
+          # List of excluded files / directories
+          exclusions: '*.git* update.json'
+
+      - name: Create Release
+        uses: ncipollo/release-action@v1.10.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          # An optional set of paths representing artifacts to upload to the release. This may be a single path or a comma delimited list of paths (or globs)
+          artifacts: 'MagiskShowCameraSoundsModule.zip'
+          # An optional name for the release. If this is omitted the tag will be used.
+          name: ${{github.ref_name}}
