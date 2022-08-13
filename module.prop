@@ -1,0 +1,7 @@
+id=MagiskShowCameraSoundsModule
+name=Show Camera Sounds Config
+version=v0.1.0
+versionCode=1
+author=st1011
+description=Show 'Camera sounds' config on Google Camera.
+updateJson=https://raw.githubusercontent.com/st1011/ShowCameraSoundsConfig/master/update.json
