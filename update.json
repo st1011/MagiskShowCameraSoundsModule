@@ -1,6 +1,6 @@
 {
-  "version": "v0.1.0",
-  "versionCode": 1,
-  "zipUrl": "https://raw.githubusercontent.com/st1011/MagiskShowCameraSoundsModule/releases/latest/download/MagiskShowCameraSoundsModule.zip",
-  "changelog": "https://raw.githubusercontent.com/st1011/MagiskShowCameraSoundsModule/changelog.md"
+  "version": "v0.2.0",
+  "versionCode": 2,
+  "zipUrl": "https://github.com/st1011/MagiskShowCameraSoundsModule/releases/latest/download/MagiskShowCameraSoundsModule.zip",
+  "changelog": "https://raw.githubusercontent.com/st1011/MagiskShowCameraSoundsModule/main/changelog.md"
 }
